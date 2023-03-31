@@ -1,0 +1,27 @@
+.form {
+  max-width: 90rem;
+  margin: 5rem auto;
+
+  display: flex;
+  gap: 2rem;
+}
+.form__label {
+  font-size: 1.4rem;
+}
+.form__input {
+  height: 4rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.form__btn--submit {
+  font-size: 1.6rem;
+  border: 1px solid var(--secondary-color);
+  padding: 1rem;
+  transition: all 0.2s;
+}
+.form__btn--submit:hover {
+  background: var(--secondary-color);
+  color: var(--font-color-1);
+}

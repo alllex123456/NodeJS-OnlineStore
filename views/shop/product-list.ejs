@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="css/products.css"
+</head>
+
+  <body>
+
+<%- include('../includes/navigation.ejs')  %>
+
+<main>
+
+  <% if (products.length > 0) {%>  
+  
+  <ul class="products">
+  
+  <% for (const product of products) {%> 
+  
+    <li class="products__item">
+      <div class="products__item-img">
+        <img src="<%= product.imageUrl %>" alt="card" />
+      </div>
+      <div class="products__item-container">
+        <h3><%= product.title  %></h3>
+        <p class="products__item-description"><%= product.description  %> </p>
+        <p class="products__item-price">$ <%= product.price  %></p> 
+        
+          <div class="actions">
+            <a href="/products/<%= product.id %>" class="btn">View details</a>
+            <%- include('../includes/add-to-cart.ejs', {product: product})%>
+          </div>
+        
+      </div>
+    </li>
+  
+  <%}  %> 
+  
+  </ul>
+  
+  <%} else {%> 
+    <h1>No products added yet</h1>
+  <%}  %> 
+</main>
+
+<%- include('../includes/footer.ejs')%>
